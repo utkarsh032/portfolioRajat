@@ -3,9 +3,6 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        "hero-pattern": "url('./src/assets/herobg1.jpg')",
-      },
       colors: {
         primary: "#370028",
         secondary: "#aaa6c3",

@@ -7,16 +7,30 @@ import CardLinks from "./pages/CardLinks";
 import Products from "./pages/Products";
 import Skills from "./pages/Expertise";
 import Experience from "./pages/Experience";
+import heroBg from "./assets/hero.jpg";
 
 function App() {
+  const bgImageStyle = {
+    backgroundImage: `url(${heroBg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  };
+  const bgImageStyleNoCenter = {
+    backgroundImage: `url(${heroBg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
+
   return (
     <Router>
       <div className="relative z-0 bg-primary  bg-cover bg-no-repeat bg-center">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        <div style={bgImageStyle}>
           <Navbar />
           <Hero />
         </div>
-        <div className="bg-hero-pattern bg-cover bg-no-repeat ">
+
+        <div style={bgImageStyleNoCenter}>
           <About />
           <Products />
 
