@@ -1,19 +1,18 @@
-import React from "react";
 import Skill1 from "../assets/skill1.gif";
 import Skill2 from "../assets/skill2.gif";
 import Skill3 from "../assets/skill3.gif";
 
 const Skills = () => {
   return (
-    <div className="h-[35rem] max-w-7xl mx-auto py-4">
+    <div className="max-w-7xl mx-auto py-4">
       <h1 className="text-neutral-200 text-4xl font-bold py-6 text-center">
         My Expertise
       </h1>
-      <div className="flex flex-wrap gap-4 justify-around items-center py-6">
+      <div className="md:flex gap-4 justify-between items-center  ">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col text-center items-center border border-[#610A26] rounded-xl"
+            className="md:w-[50vh] md:h-[40vh] p-2 m-4 flex flex-col text-center items-center border border-[#610A26] rounded-xl shadow-xl"
           >
             <img
               src={testimonial.src}
@@ -30,7 +29,6 @@ const Skills = () => {
     </div>
   );
 };
-
 const testimonials = [
   {
     quote:

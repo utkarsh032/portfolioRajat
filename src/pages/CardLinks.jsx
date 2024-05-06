@@ -6,13 +6,13 @@ import insta from "../assets/insta.svg";
 
 const CardLinks = () => {
   return (
-    <div className="max-w-7xl mx-auto px-8 text-neutral-200">
-      <h1 className=" text-4xl font-bold py-6 text-center">Social Acc.</h1>
-      <div className=" flex flex-wrap ">
+    <div className="max-w-7xl mx-auto text-neutral-200 py-3">
+      <h1 className=" text-4xl font-bold text-center">Social Acc.</h1>
+      <div className="  ">
         <HoverEffect items={socialLink} />
       </div>
       <hr className="border-[#610A26]" />
-      <div className="text-center py-2">
+      <div className="text-center py-1">
         <p className="text-sm">
           Copyright @2024-24 <span className="font-bold">Designed By:</span>{" "}
           @strologer
