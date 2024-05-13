@@ -8,11 +8,11 @@ const Skills = () => {
       <h1 className="text-neutral-200 text-4xl font-bold py-6 text-center">
         My Expertise
       </h1>
-      <div className="md:flex gap-4 justify-between items-center  ">
+      <div className="md:flex gap-4 justify-between items-center">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="md:w-[50vh] md:h-[40vh] p-2 m-4 flex flex-col text-center items-center border border-[#610A26] rounded-xl shadow-xl"
+            className="md:w-[50%] lg:w-[33%] xl:w-[25%] p-2 m-4 flex flex-col text-center items-center border border-[#610A26] rounded-xl shadow-xl"
           >
             <img
               src={testimonial.src}

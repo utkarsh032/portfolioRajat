@@ -1,9 +1,9 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import "./App.css";
 import Navbar from "./component/Navbar";
 import Hero from "./pages/Hero";
 import About from "./pages/About";
-import CardLinks from "./pages/CardLinks";
+import SocialAcc from "./pages/SocialAcc";
 import Products from "./pages/Products";
 import Skills from "./pages/Expertise";
 import Experience from "./pages/Experience";
@@ -32,14 +32,14 @@ function App() {
 
         <div style={bgImageStyleNoCenter}>
           <About />
-          <Products />
-
           <div className="bg-[#2d002b]">
             <Skills />
           </div>
+          <Products />
+
           <Experience />
         </div>
-        <CardLinks />
+        <SocialAcc />
       </div>
     </Router>
   );

@@ -13,7 +13,7 @@ const Experience = () => {
         {Experiences.map((item, index) => (
           <div
             key={index}
-            className="text-neutral-200 border border-[#610A26] my-4 p-4 rounded-2xl backdrop-blur-md"
+            className="text-neutral-200 border border-[#610A26] my-4 p-4 rounded-2xl backdrop-blur-xl bg-[#150014]/50"
           >
             <div className="flex items-center gap-4">
               <div className="flex justify-center">
@@ -41,7 +41,7 @@ const Experience = () => {
         ))}
       </div>
 
-      <div className="px-4 sm:w-1/2 md:flex md:flex-col md:justify-center ">
+      <div className="px-4 sm:w-1/2 md:flex md:flex-col  ">
         <div className="flex justify-end py-2">
           <h1 className="text-neutral-100 text-4xl font-bold py-2 px-4 rounded-tr-3xl rounded-l-3xl  bg-[#A11143] ">
             Education
@@ -50,9 +50,9 @@ const Experience = () => {
         {Education.map((item, index) => (
           <div
             key={index}
-            className="text-neutral-200  border border-[#610A26] my-4 py-4 px-1 rounded-xl  backdrop-blur-md "
+            className="text-neutral-200  border border-[#610A26] my-4 py-4 px-1 rounded-xl  backdrop-blur-xl bg-[#150014]/50"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center px-2 gap-2">
               <div className="flex justify-center ">
                 <PiCertificateFill className="text-2xl " />
               </div>
@@ -61,17 +61,19 @@ const Experience = () => {
             <div className="md:px-8 px-2 py-2">
               <div className="flex items-center">
                 <h3 className="md:text-2xl text-xl font-bold">{item.role}</h3>
-                <p className="text-neutral-300 font-thin">{item.branch}</p>
               </div>
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border rounded-full px-2 py-1  inline-flex items-center gap-2 my-4"
-              >
-                View Certificate
-                <LuExternalLink />
-              </a>
+              <div className="flex text-center items-center justify-between">
+                <p className="text-neutral-300 font-thin">{item.branch}</p>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border rounded-full px-2 py-1  inline-flex items-center gap-2 my-4"
+                >
+                  View Certificate
+                  <LuExternalLink />
+                </a>
+              </div>
             </div>
           </div>
         ))}

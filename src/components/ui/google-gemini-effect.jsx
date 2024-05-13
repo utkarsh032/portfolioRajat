@@ -15,21 +15,21 @@ export const GoogleGeminiEffect = ({
 }) => {
   return (
     <div className={cn("sticky top-60", className)}>
-      <p className="text-3xl  md:text-7xl font-bold pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-200">
+      <p className="text-3xl  md:text-7xl font-bold pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b text-white">
         {title || `I am a UI/UX Designer.`}
       </p>
-      <p className="text-xs md:text-xl font-normal text-center text-neutral-300 mt-4 max-w-7xl mx-auto">
+      <p className="text-xs md:text-xl font-normal text-center text-white mt-4 max-w-7xl mx-auto">
         {description ||
-          ` with a Full Stack Design certification from Masai and an APDMD (Advanced Program in Digital Media & Design) certification from MAAC. I have over two years of experience in UI/UX designing user-friendly and aesthetically pleasing interfaces for web and mobile platforms, as well as creating captivating and impactful graphic designs for various media and products. My core competencies include user journeys, UI/UX design, user experience design (UED), and visual communication.`}
+          `fueled by a passion for crafting impactful experiences. I combine user-centric design with cutting-edge trends to create seamless user journeys and intuitive interfaces. My expertise goes beyond aesthetics - I delve into user needs to ensure my designs solve real-world problems and deliver value.  With certifications in Full Stack Design and Digital Media & Design, I offer a comprehensive solution for both UI/UX and graphic design needs.  Let's collaborate to turn your vision into an experience that empowers!`}
       </p>
       <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
-        <Link
-          to="https://www.behance.net/rajat-k-prajapati"
+        <a
+          href="mailto:rajatkumar2d@gmail.com"
           target="blank"
           className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base  text-xs  w-fit mx-auto hover:bg-[#A11143] hover:text-white  duration-300 shadow-xl"
         >
-          myBehance.com
-        </Link>
+          Gmail.me
+        </a>
       </div>
       <svg
         width="1440"
