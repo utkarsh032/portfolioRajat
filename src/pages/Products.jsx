@@ -2,12 +2,16 @@ import { useState } from "react";
 import { LuExternalLink } from "react-icons/lu";
 import Behance from "../assets/behance.png";
 import Dribbble from "../assets/dribbble.svg";
-import Project1 from "../assets/project1.gif";
-import Project2 from "../assets/project2.gif";
-import Project3 from "../assets/project3.gif";
-import Project4 from "../assets/project4.gif";
-import Project5 from "../assets/project5.gif";
-import Project6 from "../assets/project6.gif";
+// projectsMedia
+import Project1 from "../assets/Pregnancy.gif";
+import Project2 from "../assets/Covid.gif";
+import Project3 from "../assets/TheBerth.gif";
+import Project4 from "../assets/Cryptoptika.gif";
+import Project5 from "../assets/Podsphere.gif";
+import Project6 from "../assets/Deciphr.gif";
+import Project7 from "../assets/Ayurveda.gif";
+import Project8 from "../assets/Discovery+.gif";
+import Project9 from "../assets/Fundflex.gif";
 
 const Products = () => {
   return (
@@ -19,6 +23,7 @@ const Products = () => {
           <ProjectItem key={index} project={project} />
         ))}
       </div>
+      <button className="flex">Show More</button>
     </section>
   );
 };
@@ -78,7 +83,7 @@ export const ProjectLink = [
     tag2: "#dashboard",
     tag3: "#userreasearch",
     to: "https://www.behance.net/gallery/136155147/Covid-19-Indian-Tracker",
-    src: Project1,
+    src: Project2,
     img: Behance,
   },
   {
@@ -88,8 +93,38 @@ export const ProjectLink = [
     tag2: "#website",
     tag3: "#userreasearch",
     to: "https://www.behance.net/gallery/172390383/The-Berth-Booking-Co",
-    src: Project6,
+    src: Project3,
     img: Dribbble,
+  },
+  {
+    name: "Cryptoptika",
+    desc: "Designed website & Mobile vesrion for berth booking",
+    tag1: "#UIDesign",
+    tag2: "#website",
+    tag3: "#userreasearch",
+    to: "https://www.behance.net/gallery/176033235/Cryptoptika",
+    src: Project4,
+    img: Behance,
+  },
+  {
+    name: "Podsphere - Audiobook & Podcast App ",
+    desc: "Designed mobile app for Audio Books  & Podcasts",
+    tag1: "#UIDesign",
+    tag2: "#website",
+    tag3: "#userreasearch",
+    to: "https://www.behance.net/gallery/185327633/Podsphere-Audiobook-Podcast-App",
+    src: Project5,
+    img: Behance,
+  },
+  {
+    name: "Deciphr - Redesign & Case Study",
+    desc: "Redesigned deciphr’s Web App.",
+    tag1: "#UIDesign",
+    tag2: "#website",
+    tag3: "#userreasearch",
+    to: "https://www.behance.net/gallery/190273715/Deciphr-Redesign-Case-Study",
+    src: Project6,
+    img: Behance,
   },
   // {
   //   name: "Cryptoptika",
@@ -98,17 +133,17 @@ export const ProjectLink = [
   //   tag2: "#website",
   //   tag3: "#userreasearch",
   //   to: "https://www.behance.net/gallery/176033235/Cryptoptika",
-  //   src: Project1,
+  //   src: Project7,
   //   img: Behance,
   // },
   // {
-  //   name: " Podsphere - Audiobook & Podcast App ",
+  //   name: "Podsphere - Audiobook & Podcast App ",
   //   desc: "Designed mobile app for Audio Books  & Podcasts",
   //   tag1: "#UIDesign",
   //   tag2: "#website",
   //   tag3: "#userreasearch",
   //   to: "https://www.behance.net/gallery/185327633/Podsphere-Audiobook-Podcast-App",
-  //   src: Project1,
+  //   src: Project8,
   //   img: Behance,
   // },
   // {
@@ -118,81 +153,7 @@ export const ProjectLink = [
   //   tag2: "#website",
   //   tag3: "#userreasearch",
   //   to: "https://www.behance.net/gallery/190273715/Deciphr-Redesign-Case-Study",
-  //   src: Project1,
-  //   img: Behance,
-  // },
-
-  // {
-  //   name: "Cryptoptika",
-  //   desc: "Created wireframes & user research for a e-commerce website",
-  //   tag1: "#UIDesign",
-  //   tag2: "#userresearch",
-  //   tag3: "#wireframe",
-  //   to: "https://www.behance.net/gallery/131296167/Website-Wireframing",
-  //   src: Project2,
-  //   img: Behance,
-  // },
-  // {
-  //   name: " Podsphere - Audiobook & Podcast App ",
-  //   desc: "Created design system & visual design for a e-commerce website",
-  //   tag1: "#UIDesign",
-  //   tag2: "#designsystem",
-  //   tag3: "#visualdesign",
-  //   to: "https://www.behance.net/gallery/136154407/Website-Design-System",
-  //   src: Project1,
-  //   img: Behance,
-  // },
-  // {
-  //   name: "Deciphr - Redesign & Case Study",
-  //   desc: "Redesigned discovery OTT Website",
-  //   tag1: "#UIDesign",
-  //   tag2: "#redesign",
-  //   tag3: "#OTT",
-  //   to: "https://www.behance.net/gallery/133630715/Discovery-Design-System-(-Academic-Project)",
-  //   src: Project1,
-  //   img: Behance,
-  // },
-
-  // {
-  //   name: "FundFlex",
-  //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  //   tag1: "#figma",
-  //   tag2: "#UIDesign",
-  //   tag3: "#Designsystem",
-  //   to: "https://dribbble.com/shots/23997544-GRAFORNAX-LANDING-PAGE?utm_source=Clipboard_Shot&utm_campaign=rajat_k_prajapati&utm_content=GRAFORNAX%20LANDING%20PAGE&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=rajat_k_prajapati&utm_content=GRAFORNAX%20LANDING%20PAGE&utm_medium=Social_Share",
-  //   src: Project5,
-  //   img: Dribbble,
-  // },
-
-  // {
-  //   name: "Cryptoptika",
-  //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  //   tag1: "#figma",
-  //   tag2: "#UIDesign",
-  //   tag3: "#Designsystem",
-  //   to: "https://www.behance.net/gallery/190273715/Deciphr-Redesign-Case-Study",
-  //   src: Project3,
-  //   img: Behance,
-  // },
-  // {
-  //   name: "GRAFORNAX",
-  //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  //   tag1: "#figma",
-  //   tag2: "#UIDesign",
-  //   tag3: "#Designsystem",
-  //   to: "https://dribbble.com/shots/23997544-GRAFORNAX-LANDING-PAGE?utm_source=Clipboard_Shot&utm_campaign=rajat_k_prajapati&utm_content=GRAFORNAX%20LANDING%20PAGE&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=rajat_k_prajapati&utm_content=GRAFORNAX%20LANDING%20PAGE&utm_medium=Social_Share",
-  //   src: Project4,
-  //   img: Dribbble,
-  // },
-
-  // {
-  //   name: "Pod Sphere",
-  //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  //   tag1: "#figma",
-  //   tag2: "#UIDesign",
-  //   tag3: "#Designsystem",
-  //   to: "https://www.behance.net/gallery/176033235/Cryptoptika",
-  //   src: Project2,
+  //   src: Project9,
   //   img: Behance,
   // },
 ];
