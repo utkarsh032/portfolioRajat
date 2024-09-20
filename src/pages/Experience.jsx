@@ -1,6 +1,5 @@
 import { BsBriefcaseFill } from "react-icons/bs";
 import { PiCertificateFill } from "react-icons/pi";
-
 import { LuExternalLink } from "react-icons/lu";
 
 const Experience = () => {
@@ -13,12 +12,10 @@ const Experience = () => {
         {Experiences.map((item, index) => (
           <div
             key={index}
-            className="text-neutral-200 border border-[#610A26] my-4 p-4 rounded-2xl backdrop-blur-xl bg-[#150014]/50"
+            className="text-neutral-200 border border-[#610A26] my-4 p-4 rounded-2xl backdrop-blur-xl bg-[#150014]/50 transition-transform duration-300 hover:scale-105"
           >
             <div className="flex items-center gap-4">
-              <div className="flex justify-center">
-                <BsBriefcaseFill className="text-2xl" />
-              </div>
+              <BsBriefcaseFill className="text-2xl" />
               <h4>{item.duration}</h4>
             </div>
             <div className="md:px-10 px-1 py-2">
@@ -26,13 +23,13 @@ const Experience = () => {
                 <h3 className="md:text-2xl text-xl font-bold">{item.role}</h3>
                 <p className="text-neutral-300 font-thin">{item.branch}</p>
               </div>
-              <ul>
-                <li>
-                  <p className="w-3 h-3 bg-[#A11143] animate-pulse rounded-full inline-block mr-2" />
+              <ul className="list-disc pl-5">
+                <li className="py-1">
+                  <span className="w-3 h-3 bg-[#A11143] animate-pulse rounded-full inline-block mr-2" />
                   {item.quote1}
                 </li>
-                <li>
-                  <p className="w-3 h-3 bg-yellow-500 rounded-full inline-block mr-2" />
+                <li className="py-1">
+                  <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block mr-2" />
                   {item.quote12}
                 </li>
               </ul>
@@ -41,21 +38,19 @@ const Experience = () => {
         ))}
       </div>
 
-      <div className="px-4 sm:w-1/2 md:flex md:flex-col  ">
+      <div className="px-4 sm:w-1/2 md:flex md:flex-col">
         <div className="flex justify-end py-2">
-          <h1 className="text-neutral-100 text-4xl font-bold py-2 px-4 rounded-tr-3xl rounded-l-3xl  bg-[#A11143] ">
+          <h1 className="text-neutral-100 text-4xl font-bold py-2 px-4 rounded-tr-3xl rounded-l-3xl bg-[#A11143]">
             Education
           </h1>
         </div>
         {Education.map((item, index) => (
           <div
             key={index}
-            className="text-neutral-200  border border-[#610A26] my-4 py-4 px-1 rounded-xl  backdrop-blur-xl bg-[#150014]/50"
+            className="text-neutral-200 border border-[#610A26] my-4 py-4 px-1 rounded-xl backdrop-blur-xl bg-[#150014]/50 transition-transform duration-300 hover:scale-105"
           >
             <div className="flex items-center px-2 gap-2">
-              <div className="flex justify-center ">
-                <PiCertificateFill className="text-2xl " />
-              </div>
+              <PiCertificateFill className="text-2xl" />
               <h4>{item.duration}</h4>
             </div>
             <div className="md:px-8 px-2 py-2">
@@ -68,7 +63,7 @@ const Experience = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border rounded-full px-2 py-1  inline-flex items-center gap-2 my-4"
+                  className="border rounded-full px-2 py-1 inline-flex items-center gap-2 my-4 transition-colors duration-300 hover:bg-[#A11143] hover:text-white"
                 >
                   View Certificate
                   <LuExternalLink />
@@ -86,37 +81,29 @@ const Experiences = [
   {
     duration: "Mar 2022 - Dec 2023",
     role: "UI/UX Designer",
-    branch: "@Blowhorn, Bengaluru ",
-    quote1:
-      'Developed user-centric "Integrated Fulfillment (IF)" dashboard, seamlessly integrating Warehouse & Transport Management functions ',
-    quote12:
-      "Enhanced user experience across website and IF mobile app designs for seamless and efficient interaction.",
+    branch: "@Blowhorn, Bengaluru",
+    quote1: 'Developed user-centric "Integrated Fulfillment (IF)" dashboard, seamlessly integrating Warehouse & Transport Management functions.',
+    quote12: "Enhanced user experience across website and IF mobile app designs for seamless and efficient interaction.",
   },
-
   {
     duration: "Sep 2020 - Aug 2021",
     role: "Graphic Designer",
-    branch: "@Solar Press, Kanpur ",
-    quote1:
-      "Worked over 30 books, magazines, balance sheets & 50 packaging projects, learn printing processes and driving company growth.",
-    quote12:
-      "Contributed to significant expansion by leveraging project experience and production process understanding.",
+    branch: "@Solar Press, Kanpur",
+    quote1: "Worked on over 30 books, magazines, balance sheets & 50 packaging projects, learning printing processes and driving company growth.",
+    quote12: "Contributed to significant expansion by leveraging project experience and production process understanding.",
   },
   {
     duration: "Aug 2019 - May 2020",
     role: "Graphic Designer",
-    branch: "@Gratia, Kanpur  ",
-    quote1:
-      "Crafted engaging content, visuals, & packaging, boosting brand visibility.",
-    quote12:
-      "Gained Digital Marketing & manufacturing insights, fueling business growth.",
+    branch: "@Gratia, Kanpur",
+    quote1: "Crafted engaging content, visuals, & packaging, boosting brand visibility.",
+    quote12: "Gained Digital Marketing & manufacturing insights, fueling business growth.",
   },
   {
     duration: "Dec 2017 - Mar 2018",
     role: "Graphic Mentor",
-    branch: "@MAAC, Lucknow ",
-    quote1:
-      "Instructed graphics software, mentoring students for career growth in design.",
+    branch: "@MAAC, Lucknow",
+    quote1: "Instructed graphics software, mentoring students for career growth in design.",
     quote12: "Guided students to enhance careers in graphics and design.",
   },
 ];

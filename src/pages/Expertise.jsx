@@ -1,6 +1,7 @@
 import Skill1 from "../assets/skill1.gif";
 import Skill2 from "../assets/skill2.gif";
 import Skill3 from "../assets/skill3.gif";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   return (
@@ -10,25 +11,30 @@ const Skills = () => {
       </h1>
       <div className="md:flex gap-4 justify-between items-center">
         {testimonials.map((testimonial, index) => (
-          <div
+          <motion.div
             key={index}
-            className="md:w-[50%] lg:w-[33%] xl:w-[25%] p-2 m-4 flex flex-col text-center items-center border border-[#610A26] rounded-xl shadow-xl"
+            className="md:w-[50%] lg:w-[33%] xl:w-[25%] p-4 m-4 flex flex-col text-center items-center border border-[#610A26] rounded-xl shadow-xl"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <img
+            <motion.img
               src={testimonial.src}
               className="w-48 hover:scale-105 duration-300"
               alt="Skills"
+              whileHover={{ scale: 1.1 }}
             />
             <h2 className="text-3xl py-4 font-bold text-neutral-300">
               {testimonial.title}
             </h2>
             <p className="text-xl text-neutral-400">{testimonial.quote}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
   );
 };
+
 const testimonials = [
   {
     quote:

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Resume from "../../src/assets/Rajat.pdf";
 import { RiGitClosePullRequestLine } from "react-icons/ri";
 import { CgMenuGridO } from "react-icons/cg";
 import { useEffect, useState } from "react";
@@ -15,87 +14,92 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`w-full shadow-xl items-center  py-4 px-8 fixed top-0 z-20 backdrop-blur-0 bg-transparent border-b-[1px] ${
-        scrolled ? "backdrop-blur-xl" : "bg-transparent"
+      className={`w-full shadow-xl items-center py-4 px-8 fixed top-0 z-20 transition-all duration-500 ${
+        scrolled
+          ? "backdrop-blur-xl bg-black/60 border-b border-gray-700"
+          : "bg-transparent"
       }`}
     >
-      <div className="w-full flex justify-between text-center max-w-7xl mx-auto text-[#fff] ">
-        <div className="w-full flex justify-between text-center items-center">
-          <Link className="text-4xl font-bold px-4 py-2">
+      <div className="w-full flex justify-between text-center max-w-7xl mx-auto text-white">
+        {/* Logo */}
+        <div className="w-full flex justify-between items-center">
+          <Link
+            to="/"
+            className="text-4xl font-bold flex items-center gap-2 px-4 py-2 hover:text-gray-300 transition-all duration-500"
+          >
             Rajat
-            <p className="animate-bounce bg-[#A11143] w-3 h-3 rounded-full inline-block mx-1"></p>
+            <p className="animate-bounce bg-[#A11143] w-3 h-3 rounded-full inline-block"></p>
           </Link>
 
-          <div className="py-2 hidden sm:block  ">
-            <ul className="list-none flex justify-between text-center items-center gap-8">
-              <li className="hover:text-neutral-300 text-[18px] font-medium cursor-pointer hover:border hover:border-[#A11143]  px-2 py-1 rounded-md duration-300 ">
-                <Link to="/about">About Me</Link>
-              </li>
-              <li className="hover:text-neutral-300 text-[18px] font-medium cursor-pointer hover:border hover:border-[#A11143]  px-2 py-1 rounded-md duration-300">
-                <Link to="/skill">My Expertise</Link>
-              </li>
-              <li className="hover:text-neutral-300 text-[18px] font-medium cursor-pointer hover:border hover:border-[#A11143]  px-2 py-1 rounded-md duration-300">
-                <Link to="/projects">Portfolio</Link>
-              </li>
-              <li className="hover:text-neutral-300 text-[18px] font-medium cursor-pointer hover:border hover:border-[#A11143]  px-2  py-1 rounded-md duration-300">
-                <Link to="/tech">Experience & Education</Link>
-              </li>
-              <li className="hover:text-neutral-300 text-[18px] font-medium cursor-pointer hover:border hover:border-[#A11143]  px-2 py-1 rounded-md duration-300">
-                <Link to="/static">Contact Me</Link>
-              </li>
-              <li>
-                <a
-                  href="tel:+919305638595"
-                  className="hidden sm:block bg-[#A11143] text-neutral-300 rounded-md uppercase text-[18px] font-medium  px-4 py-1 outline-none hover:border hover:border-white"
+          {/* Desktop Menu */}
+          <div className="py-2 hidden sm:flex items-center">
+            <ul className="flex gap-8 text-[18px] font-medium">
+              {[
+                { path: "/about", label: "About Me" },
+                { path: "/skill", label: "My Expertise" },
+                { path: "/projects", label: "Portfolio" },
+                { path: "/tech", label: "Experience & Education" },
+                { path: "/static", label: "Contact Me" },
+              ].map((item) => (
+                <li
+                  key={item.label}
+                  className="relative group cursor-pointer hover:text-[#A11143] transition-all duration-500"
                 >
-                  Call Me
-                </a>
-              </li>
+                  <Link to={item.path}>{item.label}</Link>
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#A11143] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              ))}
+              <li>
+              <a
+                href="tel:+919305638595"
+                className="hidden sm:block bg-[#A11143] text-neutral-300 rounded-md uppercase text-[18px] font-medium px-4 py-1 outline-none transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r from-[#A11143] to-[#ff6b6b] hover:text-white hover:shadow-lg hover:border hover:border-white "
+              >
+                Call Me
+              </a>
+            </li>
+            
             </ul>
           </div>
         </div>
 
-        {/* small screen */}
-        <div className="sm:hidden flex justify-end items-center ">
+        {/* Mobile Toggle */}
+        <div className="sm:hidden flex items-center">
           <div
             onClick={() => setToggle(!toggle)}
-            className="transition duration-1000"
+            className="transition-all duration-500"
           >
-            {" "}
             {toggle ? (
-              <RiGitClosePullRequestLine className="text-neutral-300 h-8 w-8 " />
+              <RiGitClosePullRequestLine className="text-neutral-300 h-8 w-8" />
             ) : (
-              <CgMenuGridO className="text-neutral-300 h-8 w-8 " />
-            )}{" "}
+              <CgMenuGridO className="text-neutral-300 h-8 w-8" />
+            )}
           </div>
         </div>
       </div>
 
-      {/* Responsive menu */}
+      {/* Mobile Menu */}
       {toggle && (
-        <div className="sm:hidden w-full shadow-xl border-l border-b absolute top-20 z-10 rounded-xl backdrop-blur-xl bg-black/40 text-neutral-100 transition duration-300">
-          <ul className="list-none flex flex-col px-8 py-4 gap-4 ">
-            <li className="hover:text-black text-[18px] font-medium cursor-pointer">
-              <Link to="/about">About Me</Link>
-            </li>
-            <li className="hover:text-black text-[18px] font-medium cursor-pointer">
-              <Link to="/skill">My Expertise</Link>
-            </li>
-            <li className="hover:text-black text-[18px] font-medium cursor-pointer">
-              <Link to="/projects">Portfolio</Link>
-            </li>
-            <li className="hover:text-black text-[18px] font-medium cursor-pointer">
-              <Link to="/tech">Experience & Education</Link>
-            </li>
-            <li className="hover:text-black text-[18px] font-medium cursor-pointer">
-              <Link to="/static">Contact Me</Link>
-            </li>
+        <div className="sm:hidden w-full shadow-xl absolute top-20 left-0 z-10 rounded-xl backdrop-blur-xl bg-black/40 text-neutral-100 transition-all duration-500">
+          <ul className="flex flex-col px-8 py-4 gap-4 text-[18px] font-medium">
+            {[
+              { path: "/about", label: "About Me" },
+              { path: "/skill", label: "My Expertise" },
+              { path: "/projects", label: "Portfolio" },
+              { path: "/tech", label: "Experience & Education" },
+              { path: "/static", label: "Contact Me" },
+            ].map((item) => (
+              <li
+                key={item.label}
+                className="cursor-pointer hover:text-[#A11143] transition-all duration-500"
+              >
+                <Link to={item.path}>{item.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       )}

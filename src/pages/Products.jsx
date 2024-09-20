@@ -2,7 +2,6 @@ import { useState } from "react";
 import { LuExternalLink } from "react-icons/lu";
 import Behance from "../assets/behance.png";
 import Dribbble from "../assets/dribbble.svg";
-// projectsMedia
 import Project1 from "../assets/Pregnancy.gif";
 import Project2 from "../assets/Covid.gif";
 import Project3 from "../assets/TheBerth.gif";
@@ -12,18 +11,20 @@ import Project6 from "../assets/Deciphr.gif";
 import Project7 from "../assets/Ayurveda.gif";
 import Project8 from "../assets/Discovery+.gif";
 import Project9 from "../assets/Fundflex.gif";
+import { motion } from "framer-motion";
 
 const Products = () => {
   return (
     <section className="max-w-7xl mx-auto py-8 px-2 text-white">
       <h1 className="text-4xl font-bold py-6 text-center">My Projects</h1>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {ProjectLink.map((project, index) => (
           <ProjectItem key={index} project={project} />
         ))}
       </div>
-      <button className="flex">Show More</button>
+      <button className="flex mx-auto mt-4 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition duration-300">
+        Show More
+      </button>
     </section>
   );
 };
@@ -32,7 +33,14 @@ const ProjectItem = ({ project }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="p-2 rounded-2xl relative border shadow-xl  border-[#610A26] bg-[#150014]/50 backdrop-blur-xl ">
+    <motion.div
+      className="p-2 rounded-2xl relative border shadow-xl border-[#610A26] bg-[#150014]/50 backdrop-blur-xl transition-transform duration-300 hover:scale-105"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+    >
       <img src={project.src} className="rounded-xl" alt="project" />
       <div className="py-4 px-2">
         <h1 className="text-2xl font-bold">{project.name}</h1>
@@ -47,9 +55,7 @@ const ProjectItem = ({ project }) => {
             href={project.to}
             target="_blank"
             rel="noopener noreferrer"
-            className="border rounded-full text-lg px-2 block duration-300 hover:-translate-x-3 hover:px-2 hover:flex hover:items-center hover:gap-1"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
+            className="border rounded-full text-lg px-2 block duration-300 hover:bg-white hover:text-black flex items-center gap-1"
           >
             {hovered ? (
               <span className="flex items-center gap-1">
@@ -61,7 +67,7 @@ const ProjectItem = ({ project }) => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

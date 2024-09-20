@@ -1,47 +1,4 @@
-import { motion } from "framer-motion";
-import { cn } from "../../utils/cn";
-import { Link } from "react-router-dom";
-
-const transition = {
-  duration: 0,
-  ease: "linear",
-};
-
-export const GoogleGeminiEffect = ({
-  pathLengths,
-  title,
-  description,
-  className,
-}) => {
-  return (
-    <div className={cn("sticky top-60", className)}>
-    <motion.p
-    className="text-3xl md:text-7xl font-bold pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-purple-500 to-pink-500"
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-  >
-    {title || `I am a UI/UX Designer.`}
-  </motion.p>
-  <motion.p
-  className="text-xs md:text-xl font-normal text-center text-white mt-4 max-w-7xl mx-auto"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.2 }}
->
-  {description ||
-    `Fueled by a passion for crafting impactful experiences. I combine user-centric design with cutting-edge trends to create seamless user journeys and intuitive interfaces. My expertise goes beyond aesthetics - I delve into user needs to ensure my designs solve real-world problems and deliver value. With certifications in Full Stack Design and Digital Media & Design, I offer a comprehensive solution for both UI/UX and graphic design needs. Let's collaborate to turn your vision into an experience that empowers!`}
-</motion.p>
-      <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
-        <a
-          href="mailto:rajatkumar2d@gmail.com"
-          target="blank"
-          className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base  text-xs  w-fit mx-auto hover:bg-[#A11143] hover:text-white  duration-300 shadow-xl"
-        >
-          Gmail.me
-        </a>
-      </div>
-      <svg
+  <svg
         width="1440"
         height="890"
         viewBox="0 0 1440 890"
@@ -163,6 +120,3 @@ export const GoogleGeminiEffect = ({
           </filter>
         </defs>
       </svg>
-    </div>
-  );
-};
